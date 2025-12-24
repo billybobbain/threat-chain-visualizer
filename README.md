@@ -11,6 +11,10 @@ An interactive web-based tool for visualizing mobile threat attack chains using 
 
 Threat Chain Visualizer transforms complex mobile security threats into intuitive, interactive visual graphs. Built for security researchers, incident responders, and threat analysts working with mobile platforms.
 
+### ⚠️ Important Notice
+
+**This tool uses only publicly available information.** It is NOT connected to any proprietary APIs or internal systems. The "threat data import" feature accepts custom JSON files for demonstration purposes. All threat intelligence is based on the publicly available MITRE ATT&CK framework.
+
 ## Features
 
 ### 🎯 Three Visualization Modes
@@ -116,6 +120,20 @@ See \`examples/zimperium-threat-example.json\` for a complete example.
 - \`collection\` - Data gathering operations
 - \`exfiltration\` - Data theft
 - \`impact\` - Final attack objectives
+
+## Screenshots
+
+### Mobile Banking Trojan - MITRE ATT&CK Mode
+![Mobile Banking Trojan Attack Chain](screenshots/mobile-banking-scenario.png)
+*Complete attack chain showing MITRE ATT&CK technique IDs (T1476 → T1532) with color-coded threat stages*
+
+### Zimperium Data Import Mode
+![Zimperium Threat Data Visualization](screenshots/mobile-banking-trojan.png)
+*Device-specific threat visualization with imported JSON data*
+
+### Phishing SMS Attack Scenario
+![Phishing SMS Attack Chain](screenshots/phishing-sms.png)
+*Sample attack scenario: SMS phishing leading to malicious app installation and data exfiltration*
 
 ## Technology Stack
 
