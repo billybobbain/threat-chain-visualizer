@@ -1,0 +1,227 @@
+.zimperium-import {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  padding: 20px;
+}
+
+.import-container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #2d2d2d;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.import-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.import-header h2 {
+  color: #00bcd4;
+  margin: 0 0 10px 0;
+  font-size: 28px;
+}
+
+.import-header p {
+  color: #cccccc;
+  margin: 0;
+  font-size: 14px;
+}
+
+.error-message {
+  background-color: #ff5722;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.error-message pre {
+  margin: 10px 0 0 0;
+  font-size: 12px;
+  white-space: pre-wrap;
+}
+
+.upload-area {
+  margin: 30px 0;
+}
+
+.upload-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  border: 3px dashed #00bcd4;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #1a1a1a;
+}
+
+.upload-button:hover {
+  background-color: #2d2d2d;
+  border-color: #00e5ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+}
+
+.upload-button svg {
+  color: #00bcd4;
+  margin-bottom: 15px;
+}
+
+.upload-button span {
+  display: block;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.upload-hint {
+  color: #999999 !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  margin-top: 8px;
+}
+
+.format-info {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #404040;
+}
+
+.format-info h3 {
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  font-size: 16px;
+}
+
+.format-example {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  overflow-x: auto;
+}
+
+.format-example pre {
+  color: #00bcd4;
+  font-size: 12px;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+}
+
+.download-example {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00bcd4;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.download-example:hover {
+  background-color: #00e5ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+}
+
+/* Zimperium Viewer Styles */
+.zimperium-viewer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.zimperium-header {
+  background-color: #2d2d2d;
+  padding: 20px;
+  border-bottom: 2px solid #404040;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.zimperium-info h3 {
+  margin: 0 0 15px 0;
+  color: #00bcd4;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.metadata-item {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.metadata-item .label {
+  color: #999999;
+  font-weight: 500;
+}
+
+.metadata-item .value {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.metadata-item .risk-critical {
+  color: #ff5722;
+  text-transform: uppercase;
+}
+
+.metadata-item .risk-high {
+  color: #ff9800;
+  text-transform: uppercase;
+}
+
+.metadata-item .risk-medium {
+  color: #ffc107;
+  text-transform: uppercase;
+}
+
+.file-info {
+  color: #cccccc;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.clear-button {
+  padding: 10px 20px;
+  background-color: #404040;
+  color: #ffffff;
+  border: 2px solid #666666;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.clear-button:hover {
+  background-color: #ff5722;
+  border-color: #ff5722;
+  box-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+}

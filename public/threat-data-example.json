@@ -1,0 +1,101 @@
+{
+  "threatName": "Mobile Banking Trojan - Device ABC123",
+  "deviceId": "device-abc123",
+  "deviceModel": "Samsung Galaxy S24",
+  "osVersion": "Android 14",
+  "timestamp": "2025-12-24T14:30:00Z",
+  "severity": "critical",
+  "threats": [
+    {
+      "id": "zim-001",
+      "name": "Suspicious App Sideload Detected",
+      "type": "initial-access",
+      "severity": "high",
+      "attackId": "T1476",
+      "description": "App 'Banking Helper' installed from unknown source outside Google Play Store",
+      "timestamp": "2025-12-24T14:00:00Z",
+      "evidence": {
+        "packageName": "com.malicious.bankhelper",
+        "sourceUrl": "https://suspicious-site.com/app.apk"
+      }
+    },
+    {
+      "id": "zim-002",
+      "name": "Excessive Permissions Requested",
+      "type": "privilege-escalation",
+      "severity": "high",
+      "attackId": "T1629",
+      "description": "App requested SMS, contacts, accessibility service, and device admin permissions",
+      "timestamp": "2025-12-24T14:02:00Z",
+      "evidence": {
+        "permissions": ["READ_SMS", "READ_CONTACTS", "BIND_ACCESSIBILITY_SERVICE", "DEVICE_ADMIN"]
+      }
+    },
+    {
+      "id": "zim-003",
+      "name": "Accessibility Service Abuse",
+      "type": "execution",
+      "severity": "critical",
+      "attackId": "T1575",
+      "description": "Malicious app using accessibility service to interact with legitimate banking apps",
+      "timestamp": "2025-12-24T14:05:00Z",
+      "evidence": {
+        "targetApps": ["com.chase.mobile", "com.wellsfargo.mobile"]
+      }
+    },
+    {
+      "id": "zim-004",
+      "name": "SMS Interception Active",
+      "type": "collection",
+      "severity": "critical",
+      "attackId": "T1412",
+      "description": "App intercepting 2FA codes from SMS messages",
+      "timestamp": "2025-12-24T14:06:00Z",
+      "evidence": {
+        "interceptedMessages": 5,
+        "keywords": ["verification code", "OTP", "authentication"]
+      }
+    },
+    {
+      "id": "zim-005",
+      "name": "Keylogging Activity Detected",
+      "type": "collection",
+      "severity": "critical",
+      "attackId": "T1417",
+      "description": "App capturing user input including credentials",
+      "timestamp": "2025-12-24T14:08:00Z",
+      "evidence": {
+        "capturedFields": ["username", "password", "account_number"]
+      }
+    },
+    {
+      "id": "zim-006",
+      "name": "Suspicious Network Communication",
+      "type": "exfiltration",
+      "severity": "critical",
+      "attackId": "T1437",
+      "description": "Encrypted data transmission to suspicious C2 server",
+      "timestamp": "2025-12-24T14:10:00Z",
+      "evidence": {
+        "destinationIP": "185.220.101.45",
+        "bytesTransferred": 15360,
+        "protocol": "HTTPS"
+      }
+    }
+  ],
+  "relationships": [
+    { "from": "zim-001", "to": "zim-002", "label": "App installation led to" },
+    { "from": "zim-002", "to": "zim-003", "label": "Permissions granted enabled" },
+    { "from": "zim-003", "to": "zim-004", "label": "Accessibility abuse enabled" },
+    { "from": "zim-003", "to": "zim-005", "label": "Accessibility abuse enabled" },
+    { "from": "zim-004", "to": "zim-006", "label": "Captured data sent via" },
+    { "from": "zim-005", "to": "zim-006", "label": "Captured credentials sent via" }
+  ],
+  "zimperiumMetadata": {
+    "detectionEngine": "zIPS",
+    "confidenceScore": 0.98,
+    "riskLevel": "critical",
+    "responseAction": "quarantine",
+    "analystNotes": "Active banking trojan targeting multiple financial institutions"
+  }
+}

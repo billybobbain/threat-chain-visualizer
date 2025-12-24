@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+}
+
+.mode-selector {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  display: flex;
+  gap: 10px;
+  background-color: rgba(45, 45, 45, 0.95);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.mode-selector button {
+  padding: 10px 20px;
+  background-color: #1a1a1a;
+  color: #cccccc;
+  border: 2px solid #404040;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.mode-selector button:hover {
+  background-color: #404040;
+  border-color: #00bcd4;
+  color: #ffffff;
+}
+
+.mode-selector button.active {
+  background-color: #00bcd4;
+  border-color: #00bcd4;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.2);
+}
+
+.app-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  background-color: rgba(45, 45, 45, 0.95);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.app-controls button {
+  padding: 10px 20px;
+  background-color: #2d2d2d;
+  color: #cccccc;
+  border: 2px solid #404040;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.app-controls button:hover {
+  background-color: #404040;
+  border-color: #00bcd4;
+  color: #ffffff;
+}
+
+.app-controls button.active {
+  background-color: #00bcd4;
+  border-color: #00bcd4;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.2);
+}
